@@ -1,6 +1,7 @@
 package com.example.android.miwok;
 
 import android.app.Activity;
+import android.media.MediaPlayer;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -19,7 +20,10 @@ import java.util.ArrayList;
  */
 
 public class WordAdapter extends ArrayAdapter<Word> {
+
     private int mColorResourceId;
+    //private MediaPlayer mediaPlayer;
+    //private Activity mContext;
     /**
      * This is our own custom constructor (it doesn't mirror a superclass constructor).
      * The context is used to inflate the layout file, and the list is the data we want
@@ -34,6 +38,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // Because this is a custom adapter for two TextViews and an ImageView, the adapter is not
         // going to use this second argument, so it can be any value. Here, we used 0.
         super(context, 0, words);
+       // mContext = context;
         mColorResourceId = backGround;
     }
     @Override
@@ -44,7 +49,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         }
 
         // Get the {@link AndroidFlavor} object located at this position in the list
-        Word currentWord = getItem(position);
+        final Word currentWord = getItem(position);
         ImageView imageView = (ImageView) listItemView.findViewById(R.id.image);
         View textContainer = (View) listItemView.findViewById(R.id.word_background);
         //textContainer.setBackgroundResource(word_background);
@@ -52,6 +57,16 @@ public class WordAdapter extends ArrayAdapter<Word> {
         int color = ContextCompat.getColor(getContext(), mColorResourceId);
         // Set the background color of the text container View
         textContainer.setBackgroundColor(color);
+
+//        textContainer.setOnClickListener(new View.OnClickListener()
+//        {
+//            @Override
+//            public void onClick(View view)
+//            {
+//                mediaPlayer = MediaPlayer.create(mContext, currentWord.getmAudioResourceId());
+//                mediaPlayer.start();
+//            }
+//        });
 
 
         if(currentWord.hasImage()) {
