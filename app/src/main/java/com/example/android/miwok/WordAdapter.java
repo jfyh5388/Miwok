@@ -77,7 +77,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
             imageView.setVisibility(View.GONE);
 
         // Find the TextView in the list_item.xml layout with the ID version_name
-        TextView nameTextView = (TextView) listItemView.findViewById(R.id.miwork_text_view);
+        TextView nameTextView = (TextView) listItemView.findViewById(R.id.miwok_text_view);
         // Get the version name from the current AndroidFlavor object and
         // set this text on the name TextView
         nameTextView.setText(currentWord.getMiwokTranslation());

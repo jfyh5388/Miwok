@@ -35,6 +35,16 @@ public class Word {
         return mAudioResourceId;
     }
 
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mImageResourceId=" + mImageResourceId +
+                ", mAudioResourceId=" + mAudioResourceId +
+                ", mMiwokTranslation='" + mMiwokTranslation + '\'' +
+                ", mDefaultTranslation='" + mDefaultTranslation + '\'' +
+                '}';
+    }
+
     public Word(String defaultWord, String miwokWord, int audioResourceId)
     {
         mMiwokTranslation = miwokWord;
