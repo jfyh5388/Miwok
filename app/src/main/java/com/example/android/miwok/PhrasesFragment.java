@@ -16,7 +16,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 
-public class PharsesFragment extends Fragment {
+public class PhrasesFragment extends Fragment {
     private MediaPlayer mMediaPlayer;
     private AudioManager mAudioManager;
     private AudioManager.OnAudioFocusChangeListener mOnAudioFocusChangeListener =
